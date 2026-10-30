@@ -19,3 +19,11 @@ def rectangle_area(width, height):
 def rectangle_perimeter(width, height):
     """Периметр прямоугольника."""
     return 2 * (width + height)
+
+
+def triangle_area(a, b, c):
+    """Площадь треугольника по трём сторонам (формула Герона)."""
+    if a + b <= c or a + c <= b or b + c <= a:
+        raise ValueError("Треугольник с такими сторонами не существует")
+    p = (a + b + c) / 2
+    return math.sqrt(p * (p - a) * (p - b) * (p - c))
